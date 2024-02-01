@@ -1,0 +1,34 @@
+def total_getter(amount_apple, amount_orange, amount_cola, amount_beer):
+
+    product_sum = added_products(amount_apple, amount_orange, amount_cola, amount_beer)
+    taxes = tax_calculator(product_sum)
+
+    total = product_sum + taxes
+
+    return total
+
+def added_products(amount_apple, amount_orange, amount_cola, amount_beer):
+
+    price_apple = 2.80
+    price_orange = 3.20
+    price_cola = 2.60
+    price_beer = 5.90
+
+    product_sum = (price_beer * amount_beer) + (price_cola * amount_cola) + (price_orange * amount_orange) + \
+                  (price_apple * amount_apple)
+
+    return product_sum
+
+def tax_calculator(product_sum):
+
+    taxes = product_sum * (6 / 100)
+
+    return taxes
+
+amount_apple = 45
+amount_orange = 567675
+amount_cola = 765
+amount_beer = 78
+
+total = total_getter(amount_apple, amount_orange, amount_cola, amount_beer)
+print(total)
